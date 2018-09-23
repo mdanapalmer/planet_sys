@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require "./lib/planet_sys.rb"
+
+PlanetSys::Planetcli.new.call
+
+#instantiate and do the call method on it. (What is the call method?  Self defined or a convention?)

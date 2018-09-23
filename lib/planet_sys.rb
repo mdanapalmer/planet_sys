@@ -1,5 +1,8 @@
-require "planet_sys/version"
+require 'open-uri'
+require 'nokogiri'
+require 'pry'
 
-module PlanetSys
-  # Your code goes here...
-end
+require_relative "./planet_sys/version"
+require_relative "./planet_sys/planetcli"
+require_relative "./planet_sys/planet"
+require_relative "./planet_sys/system"

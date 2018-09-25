@@ -11,9 +11,13 @@ class PlanetSys::System
 		planets = []
 
 		planets << self.scrape_merc
-		planets << self.scrape_ven
+		planets << self.scrape_venu
 		planets << self.scrape_earth
 		planets << self.scrape_mars
+		planets << self.scrape_jupi
+		planets << self.scrape_satu
+		planets << self.scrape_uran
+		planets << self.scrape_nept
 
 		planets 
 	end
@@ -30,7 +34,7 @@ class PlanetSys::System
 		planet
 	end
 
-	def self.scrape_ven
+	def self.scrape_venu
 	 	doc = Nokogiri::HTML(open("https://www.windows2universe.org/our_solar_system/planets_orbits_table.html"))
 	 	planet = self.new
 	 	planet.name = doc.search("td")[8].text
@@ -57,6 +61,46 @@ class PlanetSys::System
 	 	planet.orbitalprd = doc.search("td")[26].text
 	 	planet.orbitalspd = doc.search("td")[27].text
 	 	planet.rotationprd = doc.search("td")[30].text
+	 	planet
+	 end
+
+	 def self.scrape_jupi
+		doc = Nokogiri::HTML(open("https://www.windows2universe.org/our_solar_system/planets_orbits_table.html"))
+	 	planet = self.new
+	 	planet.name = doc.search("td")[32].text
+	 	planet.orbitalprd = doc.search("td")[34].text
+	 	planet.orbitalspd = doc.search("td")[35].text
+	 	planet.rotationprd = doc.search("td")[38].text
+	 	planet
+	 end
+
+	 def self.scrape_satu
+		doc = Nokogiri::HTML(open("https://www.windows2universe.org/our_solar_system/planets_orbits_table.html"))
+	 	planet = self.new
+	 	planet.name = doc.search("td")[40].text
+	 	planet.orbitalprd = doc.search("td")[42].text
+	 	planet.orbitalspd = doc.search("td")[43].text
+	 	planet.rotationprd = doc.search("td")[46].text
+	 	planet
+	 end
+
+	 def self.scrape_uran
+		doc = Nokogiri::HTML(open("https://www.windows2universe.org/our_solar_system/planets_orbits_table.html"))
+	 	planet = self.new
+	 	planet.name = doc.search("td")[48].text
+	 	planet.orbitalprd = doc.search("td")[50].text
+	 	planet.orbitalspd = doc.search("td")[51].text
+	 	planet.rotationprd = doc.search("td")[54].text
+	 	planet
+	 end
+
+	 def self.scrape_nept
+		doc = Nokogiri::HTML(open("https://www.windows2universe.org/our_solar_system/planets_orbits_table.html"))
+	 	planet = self.new
+	 	planet.name = doc.search("td")[56].text
+	 	planet.orbitalprd = doc.search("td")[58].text
+	 	planet.orbitalspd = doc.search("td")[59].text
+	 	planet.rotationprd = doc.search("td")[62].text
 	 	planet
 	 end
 

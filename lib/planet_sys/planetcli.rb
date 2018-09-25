@@ -19,11 +19,11 @@ class PlanetSys::Planetcli
 	end
 
 	def selector
-		puts "Type the name of the stellar object you wish to view (1 - 10), list to see the list, or type exit to leave."
+		puts "Type the name of the stellar object you wish to view (1 - 8), list to see the list, or type exit to leave."
 		input = nil
 		while input != "exit"
 			input = gets.strip.downcase
-			if input.to_i > 0
+			if input.to_i > 0 #between?(1..8) work here?
 			the_planet = @planets[input.to_i-1]
 				puts "Name: #{the_planet.name} - Orbital Speed:#{the_planet.orbitalspd}(km/s) - Orbital Period (Yr): #{the_planet.orbitalprd} - Rotation Period (Days): #{the_planet.rotationprd}"
 			elsif input == "list"
@@ -31,7 +31,7 @@ class PlanetSys::Planetcli
 			elsif input == "exit"
 				goodbye
 			else 
-				puts "I'm sorry, I didn't understand that.  Type 1 - 10 or exit to leave."
+				puts "I'm sorry, I didn't understand that.  Type 1 - 8 or exit to leave."
 			end
 		end
 	end

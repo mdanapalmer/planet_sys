@@ -106,16 +106,16 @@
  	 	planet
  	 end
 
- 	  def self.scrape_all_planets
- 	  	doc = Nokogiri::HTML(open("https://www.windows2universe.org/our_solar_system/planets_orbits_table.html"))
- 	  		rows = doc.search("tr")
- 	  		planets_rows = rows[1..8]
- 	  		planets_rows.each do |row|
- 	        row.search("td")[0].text
- 	 			binding.pry
- 	  		end
+ 	  # def self.scrape_all_planets
+ 	  # 	doc = Nokogiri::HTML(open("https://www.windows2universe.org/our_solar_system/planets_orbits_table.html"))
+ 	  # 		rows = doc.search("tr")
+ 	  # 		planets_rows = rows[1..8]
+ 	  # 		planets_rows.each do |row|
+ 	  #       row.search("td")[0].text
+ 	 	# 		binding.pry
+ 	  # 		end
 
- 	 	end
+ 	 	# end
 
  end
 

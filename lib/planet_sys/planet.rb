@@ -1,15 +1,16 @@
-# class Planet
-# 	attr_accessor :name
+class Planet
+	attr_accessor :name, :orbitalspd, :orbitalprd, :rotationprd
 
-# 	@@planets = []
+	@@planets = []
 
-# 	def initialize(name)
-# 		@name = name
-# 		@orbitalspd = orbitalspd
-# 		@orbitalprd = orbitalprd
-# 		@rotationprd = rotationprd
-# 		@@planets << self
-# 	end
+	def initialize(name)
+		@name = name
+		@@planets << self
+	end
 
-# end
+	def self.planets
+		@@planets
+	end 
+
+end
 

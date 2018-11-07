@@ -1,50 +1,51 @@
-#(This file deals with welcoming the user and user input)
-
+require 'colorize'
 class PlanetSys::Planetcli
 
-	attr_accessor :name
-
 	def call
-		puts "Hello, Stargazer!"
+		puts "°* ☆~Hello, Stargazer!~☆ *°".bold.cyan
+		puts "Type the number of the °˖✧stellar object✧˖° you wish to view (1 - 8).( ´ ▽ ` )ﾉ".blue
+		PlanetSys::Scraper.scrape_planets
 		planet_list
 		selector
 	end
 
 	 def planet_list
-	 	puts "Make your selection"
-	 	@planets = PlanetSys::System.all
-	 	@planets.each.with_index(1) do |planet, i|
-	 		puts "#{i} #{planet.name}" 
+	 	Planet.planets.each.with_index(1) do |planet, i|
+	 		puts "#{i}. #{planet.name}".bold
 	 	end
 	 end
 
 	def selector
-		puts "Type the number of the stellar object you wish to view (1 - 8), list to see the list, or type exit to leave."
 		input = nil
 		while input != "exit"
-			input = gets.strip.downcase
-			if input.to_i > 0 #between?(1..8) work here?
-			the_planet = @planets[input.to_i-1]
-				puts "Name: #{the_planet.name} - Orbital Speed:#{the_planet.orbitalspd}(km/s) - Orbital Period (Yr): #{the_planet.orbitalprd} - Rotation Period (Days): #{the_planet.rotationprd}"
-				puts message
+			input = gets.strip
+			if input.to_i.between?(1, 8)
+			the_planet = Planet.planets[input.to_i-1]
+				puts "Name: #{the_planet.name}
+Orbital Speed:#{the_planet.orbitalspd}(km/s)
+Orbital Period (Yr): #{the_planet.orbitalprd}
+Rotation Period (Days): #{the_planet.rotationprd}"
+				print message
 			elsif input == "list"
 				planet_list
+				print message	
 			elsif input == "exit"
 				goodbye
 			else 
-				puts "I'm sorry, I didn't understand that.  Type 1 - 8 or exit to leave."
+				puts "I'm sorry, I didn't understand that (ノ﹏ヽ).
+Type 1 - 8 or exit to leave.".red
 			end
 		end
 	end
 
 	def goodbye
-		puts "See you later, space cowboy!"
+		puts "See you later, space cowboy! ໒(◕ヮ◕)〜⊹".bold.cyan
 	end
 
 	def message
-		puts "Type the number of the stellar object you wish to view (1 - 8), list to see the list, or type exit to leave."
+		puts "Type the number of the °˖✧stellar object✧˖° you wish to view (1 - 8).
+Type list to see the list.
+Type exit to leave.".green
 	end
-
-
 end
 

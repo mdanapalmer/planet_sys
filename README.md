@@ -1,8 +1,7 @@
 # PlanetSys
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/planet_sys`. To experiment with that code, run `bin/console` for an interactive prompt.
+This gem is meant to be a very short, informative guide to the planets of the Solar System.  Their Orbital Speed (how fast they go around the sun), their orbital period (how long it takes them to go once around the sun) and their rotational speed (how quickly a day goes by on each planet.).
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -19,10 +18,30 @@ And then execute:
 Or install it yourself as:
 
     $ gem install planet_sys
+    
+You'll also want to include the gem 'colorize' for a fully immersive experience!  You can accomplish this by typing the following into your terminal!
+
+	$ gem install colorize
+
+Or navigate to this website: https://rubygems.org/gems/colorize/versions/0.8.1
+
+Lastly, you'll want to make sure your terminal window is at least the following parameters for the best viewing experience.
+	
+	Terminal window: 128 x 38
+	
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem is a simple guide to the following three aspects of each (recognized) planet in our Solar System.  
+
+	Orbital Speed: How quickly the planet goes around the Sun.
+	Orbital Period: The period it takes to go once around the sun (in Earth years).
+	Rotational Speed: How quickly the planet rotates on its axis (in Earth days).
+
+It is designed as a student CLI Project from the Flatiron School of Coding - online platform.
+
+	https://flatironschool.com/
+
 
 ## Development
 
